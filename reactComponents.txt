@@ -1,0 +1,95 @@
+MainPage {
+
+  Header.js {
+    Icon: logo,
+    Text: name,
+    Navigation {
+      4x Buttons [home, about, sign in, sign up]
+    }
+  },
+
+  YourOrderBlock.js {
+    Text,
+    yourOrder Button (it is a stack, we want "badge" with number in the left bottom corner)
+  },
+
+  TabsBlock.js {
+    Tabs [rice, noodles, soups, drinks] {
+      Tab {
+        Grid {
+          Card (clickable) {
+            body: image,
+            footer: name of the dish
+          }
+        }
+      } 
+    }
+  }
+
+  DishDetails.js (popup modal) {
+    Layer {
+      headerBox {
+        Text: dish name,
+        Icon: close icon,
+      },
+      detailsBox {
+        Box: picture,
+        Box: {
+          Text: Some info about dish
+        }
+      },
+      formBox {
+        4x FormField {
+          Select
+        }
+      },
+      buttonsBox {
+        Button: reset,
+        Button: add
+      },
+    }
+  }
+
+  YourOrderList.js (popup modal) {
+    Layer {
+      headerBox {
+        Text: "Your order"
+      },
+      listBox {
+        List
+      },
+      buttonBox {
+        Button: clear,
+        Button: translate
+      },
+    }
+  }
+
+  Footer.js {
+    Text: copyrights :D
+  }
+
+}
+
+SignInPage {
+
+  SignInForm.js {
+    2 x TextInput [email, password],
+    Checkbox with remeber my account,
+    link to create account,
+    link to reset password,
+    login Button
+  }
+
+}
+
+SignUpPage {
+
+  SignUpForm.js {
+    2 x TextInput [email, password],
+    link to login to existing account,
+    sign up Button
+  }
+
+}
+
