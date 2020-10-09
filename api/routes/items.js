@@ -39,7 +39,7 @@ router.get('/', (req, res) => {
             ingredients: doc.ingredients,
             META: {
               type: 'GET',
-              url: 'http://localhost:3000/items/' + doc._id,
+              url: 'http://localhost:9000/items/' + doc._id,
             },
           };
         }),
@@ -91,7 +91,7 @@ router.post('/', checkAuth, upload.single('itemImage'), (req, res) => {
           ingredients: result.ingredients,
           META: {
             type: 'GET',
-            url: 'http://localhost:3000/items/' + result._id,
+            url: 'http://localhost:9000/items/' + result._id,
           },
         },
       });
@@ -117,7 +117,7 @@ router.get('/:itemId', (req, res) => {
           META: {
             type: 'GET',
             desc: 'GET_ALL_ITEMS',
-            url: 'http://localhost:3000/items/',
+            url: 'http://localhost:9000/items/',
           },
         });
       } else {
@@ -149,7 +149,7 @@ router.patch('/:itemId', checkAuth, (req, res) => {
         META: {
           type: 'GET',
           desc: 'GET_UPDATED_ITEM',
-          url: 'http://localhost:3000/items/' + result._id,
+          url: 'http://localhost:9000/items/' + result._id,
         },
       });
     })

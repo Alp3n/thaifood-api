@@ -60,7 +60,7 @@ router.get('/:orderId', checkAuth, (req, res) => {
         order: order,
         request: {
           type: 'GET',
-          url: 'http//localhost:3000/orders',
+          url: 'http//localhost:9000/orders',
         },
       });
     })
@@ -84,7 +84,7 @@ router.delete('/:orderId', checkAuth, (req, res) => {
         message: 'Order deleted',
         request: {
           type: 'POST',
-          url: 'http://localhost:3000/orders',
+          url: 'http://localhost:9000/orders',
         },
       });
     })
