@@ -17,6 +17,7 @@ exports.items_get_all = (req, res) => {
             meats: doc.meats,
             allergens: doc.allergens,
             spicy: doc.spicy,
+            sweet: doc.sweet,
             egg: doc.egg,
             image: doc.image,
             ingredients: doc.ingredients,
@@ -43,6 +44,7 @@ exports.items_create_item = (req, res) => {
     meats: req.body.meats,
     allergens: req.body.allergens,
     spicy: req.body.spicy,
+    sweet: req.body.sweet,
     egg: req.body.egg,
     image: req.file.path,
     ingredients: req.body.ingredients,
@@ -61,6 +63,7 @@ exports.items_create_item = (req, res) => {
           meats: result.meats,
           allergens: result.allergens,
           spicy: result.spicy,
+          sweet: result.sweet,
           egg: result.egg,
           image: result.image,
           ingredients: result.ingredients,
@@ -85,11 +88,6 @@ exports.items_get_item = (req, res) => {
       if (doc) {
         res.status(200).json({
           item: doc,
-          // META: {
-          //   type: 'GET',
-          //   desc: 'GET_ALL_ITEMS',
-          //   url: 'http://localhost:9000/items/',
-          // },
         });
       } else {
         res.status(404).json({ message: 'No valid data for entered ID' });
@@ -117,11 +115,6 @@ exports.items_update_item = (req, res) => {
     .then((result) => {
       res.status(200).json({
         message: 'Item updated',
-        // META: {
-        //   type: 'GET',
-        //   desc: 'GET_UPDATED_ITEM',
-        //   url: 'http://localhost:9000/items/' + result._id,
-        // },
       });
     })
     .catch((err) => {
